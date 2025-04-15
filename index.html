@@ -12,15 +12,29 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
     </style>
-    </head>
-    <body class="bg-gradient-to-t from-slate-900 via-slate-800 to-slate-900 text-white px-4">
-      <main class="w-full max-w-4xl mx-auto p-6 pt-10 text-center">    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neon: {
+                green: '#39FF14',
+                pink: '#FF6EC7',
+              },
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body class="bg-gradient-to-t from-slate-900 via-slate-800 to-slate-900 text-white px-4">
+    <main class="w-full max-w-4xl mx-auto p-6 pt-10 text-center">
       <img
         src="profile.jpg"
         alt="Zach Sickles"
         class="w-40 h-40 object-cover mx-auto mb-6 mt-6 rounded-full border-4 border-white shadow-xl"
       />
-      <h1 class="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text">
+      <h1 class="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-neon-green via-neon-pink to-red-500 text-transparent bg-clip-text">
         Zach Sickles
       </h1>
       <h2 class="text-xl text-slate-300 mt-2 mb-6">
@@ -43,8 +57,6 @@
           ✉️ Contact Me
         </a>
       </div>
-
-      <!-- PROJECTS SECTION -->
       <!-- PROJECTS SECTION -->
 <section id="projects" class="bg-slate-800 p-10 rounded-2xl shadow-inner mb-16">
   <h3 class="text-3xl font-bold mb-8 text-purple-300">Featured Projects</h3>
@@ -104,44 +116,51 @@
     </div>
   </div>
 </section>
+
 <!-- ACHIEVEMENTS AND PAST ROLES SECTION -->
 <section id="achievements" class="bg-slate-800 p-10 rounded-2xl shadow-inner mb-16">
-  <h3 class="text-3xl font-bold mb-6 text-purple-300">Achievements & Past Roles</h3>
+  <h2 class="text-3xl font-bold mb-6 text-purple-300">Achievements & Past Roles</h2>
 
   <div class="text-left text-slate-300 space-y-8">
 
     <!-- Citi Combined Experience -->
-    <div class="bg-slate-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition relative">
-      <div class="flex justify-between items-start mb-1">
-        <h5 class="text-2xl font-extrabold text-purple-300">Citi</h5>
-        <span class="text-sm text-slate-400 whitespace-nowrap">Sept 2024 – Present</span>
+    <div class="bg-slate-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition relative mb-8">
+
+      <!-- Citi Title -->
+      <h3 class="text-2xl font-extrabold text-purple-300 mb-4">Citi</h3>
+
+      <!-- Software Engineer Role -->
+      <div class="mb-6">
+        <span class="text-sm text-slate-400">Sept 2024 – Present</span>
+        <h4 class="text-xl sm:text-lg font-bold text-purple-400 mb-2">Software Engineer, GenAI & ML</h4>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Developing GenAI-powered tools including a Conversational AI Assistant with RAG + LLM-generated SQL.</li>
+          <li>Working with LangChain, OpenAI, LLama, Gemini, and multiple databases (SQL, noSQL, vector stores).</li>
+          <li>Applying CI/CD, Docker, Kubernetes, and Openshift in Google Cloud SaaS environments.</li>
+          <li>Built APIs with FastAPI and UIs with Figma for scalable internal GenAI product offerings.</li>
+        </ul>
       </div>
-      <h4 class="text-xl font-bold text-purple-400 mb-2">Software Engineer, GenAI & ML</h4>
-      <ul class="list-disc list-inside space-y-2 mb-6">
-        <li>Developing GenAI-powered tools including a Conversational AI Assistant with RAG + LLM-generated SQL.</li>
-        <li>Working with LangChain, OpenAI, LLama, Gemini, and multiple databases (SQL, noSQL, vector stores).</li>
-        <li>Applying CI/CD, Docker, Kubernetes, and Openshift in Google Cloud SaaS environments.</li>
-        <li>Built APIs with FastAPI and UIs with Figma for scalable internal GenAI product offerings.</li>
-      </ul>
-      <div class="flex justify-between items-start mb-1">
-        <span></span>
-        <span class="text-sm text-slate-400 whitespace-nowrap">June 2023 – Aug 2023</span>
+
+      <!-- Big Data Analytics Intern Role -->
+      <div>
+        <span class="text-sm text-slate-400">June 2023 – Aug 2023</span>
+        <h4 class="text-xl sm:text-lg font-semibold text-purple-400 mb-2">Big Data Analytics Intern</h4>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Built an ETL pipeline in PySpark and Apache Hive using custom schema and parquet formatting.</li>
+          <li>Developed machine learning models on massive credit card datasets with Spark and XGBoost.</li>
+          <li>Designed an interactive Tableau dashboard used for marketing insights on masked global data.</li>
+        </ul>
       </div>
-      <h4 class="text-xl font-semibold text-purple-400 mb-2">Big Data Analytics Intern</h4>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Built an ETL pipeline in PySpark and Apache Hive using custom schema and parquet formatting.</li>
-        <li>Developed machine learning models on massive credit card datasets with Spark and XGBoost.</li>
-        <li>Designed an interactive Tableau dashboard used for marketing insights on masked global data.</li>
-      </ul>
+
     </div>
 
     <!-- Microsoft/Nuance -->
-    <div class="bg-slate-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition relative">
-      <div class="flex justify-between items-start mb-1">
-        <h5 class="text-2xl font-extrabold text-purple-300">Microsoft (formerly Nuance)</h5>
-        <span class="text-sm text-slate-400 whitespace-nowrap">June 2022 – Aug 2022</span>
+    <div class="bg-slate-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition relative mb-8">
+      <div class="flex flex-col sm:flex-row justify-between items-start mb-4">
+        <h3 class="text-2xl font-extrabold text-purple-300">Microsoft (formerly Nuance)</h3>
+        <span class="text-sm text-slate-400 mt-1 sm:mt-0 sm:ml-4 sm:self-center">June 2022 – Aug 2022</span>
       </div>
-      <h4 class="text-xl font-bold text-purple-400 mb-2">Intern, Software Engineering & Cybersecurity</h4>
+      <h4 class="text-xl sm:text-lg font-bold text-purple-400 mb-2">Intern, Software Engineering & Cybersecurity</h4>
       <ul class="list-disc list-inside space-y-2">
         <li>Built and deployed a Flutter mobile app for CDS specialists on iOS/Android.</li>
         <li>Integrated Google Firebase Analytics to improve UX based on content data.</li>
@@ -150,12 +169,12 @@
     </div>
 
     <!-- MassMutual -->
-    <div class="bg-slate-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition relative">
-      <div class="flex justify-between items-start mb-1">
-        <h5 class="text-2xl font-extrabold text-purple-300">MassMutual</h5>
-        <span class="text-sm text-slate-400 whitespace-nowrap">June 2019 – Aug 2019</span>
+    <div class="bg-slate-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition relative mb-8">
+      <div class="flex flex-col sm:flex-row justify-between items-start mb-4">
+        <h3 class="text-2xl font-extrabold text-purple-300">MassMutual</h3>
+        <span class="text-sm text-slate-400 mt-1 sm:mt-0 sm:ml-4 sm:self-center">June 2019 – Aug 2019</span>
       </div>
-      <h4 class="text-xl font-bold text-purple-400 mb-2">Intern, Information Technology</h4>
+      <h4 class="text-xl sm:text-lg font-bold text-purple-400 mb-2">Intern, Information Technology</h4>
       <ul class="list-disc list-inside space-y-2">
         <li>Won first place in company-wide hackathon with chatbot insurance claims tool.</li>
       </ul>
@@ -163,11 +182,11 @@
 
     <!-- Needham Schools -->
     <div class="bg-slate-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition relative">
-      <div class="flex justify-between items-start mb-1">
-        <h5 class="text-2xl font-extrabold text-purple-300">Needham Public Schools</h5>
-        <span class="text-sm text-slate-400 whitespace-nowrap">Sept 2020 – Dec 2020</span>
+      <div class="flex flex-col sm:flex-row justify-between items-start mb-4">
+        <h3 class="text-2xl font-extrabold text-purple-300">Needham Public Schools</h3>
+        <span class="text-sm text-slate-400 mt-1 sm:mt-0 sm:ml-4 sm:self-center">Sept 2020 – Dec 2020</span>
       </div>
-      <h4 class="text-xl font-bold text-purple-400 mb-2">Substitute Teacher</h4>
+      <h4 class="text-xl sm:text-lg font-bold text-purple-400 mb-2">Substitute Teacher</h4>
       <ul class="list-disc list-inside space-y-2">
         <li>Taught middle and high school classes across subjects while pursuing undergraduate degree.</li>
       </ul>
@@ -181,24 +200,30 @@
   <h3 class="text-3xl font-bold mb-6 text-purple-300">Education</h3>
 
   <div class="text-left text-slate-300 space-y-6">
+    <!-- Brown University -->
     <div>
-      <h4 class="text-2xl font-semibold text-purple-400">Brown University</h4>
-      <p class="text-sm text-slate-400 mb-2">B.S. in Applied Math & Computer Science · 4.0 GPA · Sept 2020 – May 2024</p>
+      <h4 class="text-3xl font-extrabold text-purple-300 mb-2">Brown University</h4>
+      <p class="text-xl font-semibold text-purple-400 mb-2">B.S. in Applied Math & Computer Science</p>
+      <p class="text-m font-bold text-purple-400 mb-2">GPA: 4.0</p>
+      <p class="text-sm text-slate-400 mb-4">Sept 2020 – May 2024</p>
       <ul class="list-disc list-inside">
         <li>Specialization in A.I. and Operations Research</li>
         <li>Data Science Fellow: Developed AI modules, taught 65+ students, created custom ML content</li>
         <li>Teaching Assistant: Redesigned Machine Learning module for Data Science Fluency course</li>
       </ul>
     </div>
+
+    <!-- DIS Copenhagen -->
     <div>
-      <h4 class="text-2xl font-semibold text-purple-400">DIS Copenhagen</h4>
-      <p class="text-sm text-slate-400">Study Abroad · Jan 2023 – May 2023</p>
+      <h4 class="text-xl font-semibold text-purple-300 mb-2">DIS Copenhagen</h4>
+      <p class="text-sm text-slate-500 mb-2">Study Abroad · Jan 2023 – May 2023</p>
       <ul class="list-disc list-inside">
         <li>Core Curriculum: Artificial Neural Networks and Deep Learning</li>
       </ul>
     </div>
   </div>
 </section>
+
 
 <!-- SKILLS AND CERTIFICATIONS SECTION -->
 <section id="skills" class="bg-slate-800 p-10 rounded-2xl shadow-inner mb-16">
@@ -244,6 +269,7 @@
           Connect with me on <a href="https://www.linkedin.com/in/zach-sickles-72264b203" target="_blank" class="text-blue-400 underline">LinkedIn</a> or <a href="mailto:zsickles12@gmail.com" class="text-blue-400 underline">Email</a>.
         </p>
       </footer>
+
     </main>
   </body>
 </html>
